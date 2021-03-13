@@ -20,6 +20,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13); 
+    box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13);
 }
 
 .navegation {
@@ -41,24 +43,54 @@
     text-decoration: none;
 }
 
-.form{
+#main-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-section{
+    width: 100%;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #input-search{
     border: 1px solid rgb(212, 212, 212);
-    width: 300px;
+    width: 80%;
     padding: 0 10px;
+    -webkit-box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13); 
+    box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13);
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 40px;
 }
 
 .form-button{
-    width: 50px;
+    width: 100px;
     border: 1px solid rgb(226, 226, 226);
+    height: 40px;
+    -webkit-box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13); 
+    box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13);
 }
 
 .fa-search{
     color: rgb(129, 129, 129);
+}
+
+.products-section{
+    width: 100%;
+    display: flex;
+    flex: 1 1 1;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .cart-button {
@@ -76,6 +108,39 @@
 
 .main-container__card{
     width: 210px;
-    height: 280px;
-    border: 1px solid red;
+    -webkit-box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13); 
+    box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13);
+    margin: 10px;
+}
+
+.desing {
+    width: 100%;
+}
+
+.main-container__card__info{
+    padding: 5px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.money {
+    color: rgb(3, 97, 3);
+}
+
+.products-section__button{
+    width: 95%;
+    height: 50px;
+    border: 1px solid rgb(129, 129, 129);
+}
+
+.fa-plus-circle{
+    font-size: 30px;
+    color: rgb(129, 129, 129);
+}
+
+.products-section__button:hover{
+    border: 1px solid rgb(3, 97, 3);
 }
