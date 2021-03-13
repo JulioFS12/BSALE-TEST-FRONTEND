@@ -7,5 +7,28 @@
     text-decoration: none;
     list-style: none;
     font-size: 16px;
-    
+    font-family: 'Roboto', sans-serif
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navegation {
+    background-color: red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navegation__logo {
+    font-weight: bold;
 }
