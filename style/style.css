@@ -23,12 +23,59 @@
 }
 
 .navegation {
-    background-color: red;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.navegation__logo {
+
+.navegation__logo__name {
     font-weight: bold;
+    color: rgb(129, 129, 129);
+    font-size: 20px;
+}
+
+.navegation__logo__name:hover {
+    font-weight: bold;
+    color: rgb(129, 129, 129);
+    text-decoration: none;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+#input-search{
+    border: 1px solid rgb(212, 212, 212);
+    width: 300px;
+    padding: 0 10px;
+}
+
+.form-button{
+    width: 50px;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.fa-search{
+    color: rgb(129, 129, 129);
+}
+
+.cart-button {
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border-radius: 100%;
+    color: rgb(129, 129, 129);
+}
+
+.cart-button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+
+.main-container__card{
+    width: 210px;
+    height: 280px;
+    border: 1px solid red;
 }
