@@ -30,30 +30,27 @@
 
             <section class="search-section">
 
-                <form class="form">
-                    <input type="text" name="search" placeholder="Search" id="input-search">
-                    <button id="name" type="submit" class="form-button"> <i class="fas fa-search"></i> </button>
+                <form id="form">
+                    <select name="cars" id="cars">
+                      <option value="volvo">All</option>
+                      <option value="saab">Saab</option>
+                      <option value="opel">Opel</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                    <input class="input-search" id="name" type="text" placeholder="Search">
+                    <button class="form-button" type="submit" onsubmit="getByName()"> <i class="fas fa-search"></i> </button>
                 </form>
                 
             </section>
-            <section class="products-section">
-
-                <div class="main-container__card">
-                    <img src="https://dojiw2m9tvv09.cloudfront.net/11132/product/misterbig3308256.jpg" class="desing" alt="product">
-                    <div class="main-container__card__info">
-                      <p class="">Some quick text.</p>
-                          <p class="money">$ 123.23</p>
-                          <button class="products-section__button">
-                            <i class="fas fa-plus-circle"></i>
-                          </button>
-                    </div>
-                </div>
-
+            <section id="products-section">
+              <!-- Getting from api -->
             </section>
 
         </main>
     </body>
 
     <script type="text/javascript" src="./javascript/app.js"></script>
+    <script type="text/javascript" src="./javascript/fetchApi.js"></script>
+
 
 </html>
