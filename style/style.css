@@ -120,6 +120,7 @@
     justify-content: space-around;
     width: 210px;
     height: 370px;
+    max-height: 370px;
     -webkit-box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13); 
     box-shadow: 1px 0px 11px 1px rgba(0,0,0,0.13);
     margin: 10px;
@@ -127,6 +128,7 @@
 
 .desing {
     width: 100%;
+    min-height: 200px;
 }
 
 .main-container__card__info{
@@ -155,4 +157,14 @@
 
 .products-section__button:hover{
     border: 1px solid rgb(3, 97, 3);
+}
+
+#pagination{
+    display: flex;
+    align-items: center;
+}
+
+#pg-left, #pg-right {
+    width: 100px;
+    margin: 0 5px;
 }

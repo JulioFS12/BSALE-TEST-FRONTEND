@@ -1,6 +1,9 @@
 const productView = document.getElementById('products-section');
 const categoryView = document.getElementById('cars');
 const form = document.getElementById('form');
+const btnLeft = document.getElementById('pg-left');
+const btnRight = document.getElementById('pg-right');
+var pgCounter = 0;
 var category = -1;
 
 const showDocument = ({data}) => {
@@ -15,7 +18,7 @@ const showDocument = ({data}) => {
 
         productView.innerHTML += `
         <div class="main-container__card">
-            <img src="${!data[i].url_image > 5? `../assets/empty.jpeg` : data[i].url_image}" class="desing" alt="product">
+            <img src="${data[i].url_image.length < 5? `../assets/empty.jpeg` : data[i].url_image}" class="desing" alt="product">
                 <div class="main-container__card__info">
                     <p class="">${!data[i].name ? `empty` : data[i].name}</p>
                     <p class="money">$ ${!data[i].price ? `empty` : data[i].price}</p>
@@ -46,11 +49,12 @@ const fecthApi = (option, key, second_key) => {
     switch (option) {
         case 'allProducts':
 
-            fetch(`http://localhost:5000/products/all`, options)
+            fetch(`http://localhost:5000/products/all?limit=${key}&set=${second_key}`, options)
                 .then(response => response.json())
                 .then(data => {
-                    showDocument(data)
-                })
+                    showDocument(data);
+                }).
+                catch( res => console.log(res) );
             break;
 
         case 'categories':
@@ -59,7 +63,8 @@ const fecthApi = (option, key, second_key) => {
                 .then(response => response.json())
                 .then(data => {
                     showComboBox(data);
-                })
+                }).
+                catch( res => console.log(res) );
             break;
 
         case 'byName':
@@ -68,7 +73,8 @@ const fecthApi = (option, key, second_key) => {
                 .then(response => response.json())
                 .then(data => {
                     showDocument(data);
-                })
+                }).
+                catch( res => console.log(res) );
             break;
 
         case 'bycategory':
@@ -77,7 +83,8 @@ const fecthApi = (option, key, second_key) => {
                 .then(response => response.json())
                 .then(data => {
                     showDocument(data);
-                })
+                }).
+                catch( res => console.log(res) );
             break;
     }
 }
@@ -85,7 +92,7 @@ const fecthApi = (option, key, second_key) => {
 
 const getAllProducts = () => {
     productView.innerHTML = `WAIT A MINUTE...!`;
-    fecthApi('allProducts', '', '');
+    fecthApi('allProducts', 10, 10 * pgCounter);
 }
 
 const getByName = (e) => {
@@ -112,6 +119,16 @@ categoryView.addEventListener('change', (e) => {
     category = categoryView.value;
 });
 
+const showRight = () => {
+    pgCounter += 1;
+    getAllProducts();
+}
+
+const showLeft = () => {
+    pgCounter -= 1;
+    getAllProducts();
+}
+
 const start = (e) => {
     e.preventDefault();
 
@@ -119,9 +136,12 @@ const start = (e) => {
         ?getByName(e)
         :getByCategory(e);
 }
+console.log(pgCounter)
 
 getAllCategories();
 getAllProducts();
+btnRight.addEventListener('click', showRight);
+btnLeft.addEventListener('click', showLeft);
 form.addEventListener('submit', start);
 
 
