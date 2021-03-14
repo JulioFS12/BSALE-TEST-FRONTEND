@@ -31,11 +31,8 @@
             <section class="search-section">
 
                 <form id="form">
-                    <select name="cars" id="cars">
-                      <option value="volvo">All</option>
-                      <option value="saab">Saab</option>
-                      <option value="opel">Opel</option>
-                      <option value="audi">Audi</option>
+                    <select id="cars" name="cars">
+                        <option value="-1">All</option>
                     </select>
                     <input class="input-search" id="name" type="text" placeholder="Search">
                     <button class="form-button" type="submit" onsubmit="getByName()"> <i class="fas fa-search"></i> </button>
@@ -50,7 +47,5 @@
     </body>
 
     <script type="text/javascript" src="./javascript/app.js"></script>
-    <script type="text/javascript" src="./javascript/fetchApi.js"></script>
-
-
+    
 </html>
