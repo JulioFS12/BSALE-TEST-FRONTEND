@@ -14,7 +14,7 @@ const showDocument = ({data}) => {
         return productView.innerHTML += `<h4>NO RESULTS</h4>`
     }
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < data.length ; i++) {
 
         productView.innerHTML += `
         <div class="main-container__card">
@@ -101,18 +101,26 @@ const getByName = (e) => {
     const key = document.getElementById('name').value;
 
     fecthApi('byName', key, '');
+
+    // key.length >= 1
+    //     ?fecthApi('byName', key, '')
+    //     :productView.innerHTML = `PLEASE SET A VALUE TO LOOK FOR!`;
 }
 
 const getAllCategories = () => {
-    const key = document.getElementById('name').value;
-    fecthApi('categories', key, '');
+    fecthApi('categories', '', '')
 }
 
 const getByCategory = (e) => {
     e.preventDefault();
     productView.innerHTML = `WAIT A MINUTE...!`;
     const key = document.getElementById('name').value;
-    fecthApi('bycategory', key, category);
+
+    fecthApi('bycategory', key, category)
+
+    // key.length >= 1
+    //     ?fecthApi('bycategory', key, category)
+    //     :productView.innerHTML = `PLEASE SET A VALUE TO LOOK FOR!`;
 }
 
 categoryView.addEventListener('change', (e) => {
@@ -136,7 +144,6 @@ const start = (e) => {
         ?getByName(e)
         :getByCategory(e);
 }
-console.log(pgCounter)
 
 getAllCategories();
 getAllProducts();
