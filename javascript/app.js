@@ -102,9 +102,6 @@ const getByName = (e) => {
 
     fecthApi('byName', key, '');
 
-    // key.length >= 1
-    //     ?fecthApi('byName', key, '')
-    //     :productView.innerHTML = `PLEASE SET A VALUE TO LOOK FOR!`;
 }
 
 const getAllCategories = () => {
@@ -118,9 +115,6 @@ const getByCategory = (e) => {
 
     fecthApi('bycategory', key, category)
 
-    // key.length >= 1
-    //     ?fecthApi('bycategory', key, category)
-    //     :productView.innerHTML = `PLEASE SET A VALUE TO LOOK FOR!`;
 }
 
 categoryView.addEventListener('change', (e) => {
